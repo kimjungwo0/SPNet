@@ -1,7 +1,7 @@
 DATA:
   data_root: /root/data1/Citiscapes
-  train_list: /root/data1/Citiscapes/train.lst
-  val_list: /root/data1/Citiscapes/val.lst
+  train_list: ~data1/Citiscapes/train.lst
+  val_list: ~data1/Citiscapes/val.lst
   classes: 19
 
 TRAIN:
@@ -49,7 +49,7 @@ Distributed:
   loss_scale:
 
 TEST:
-  test_list: /root/data1/Citiscapes/test.lst
+  test_list: ~data1/Citiscapes/test.lst
   split: test  # split in [train, val and test]
   base_size: 2048  # based size for scaling
   test_h: 768
