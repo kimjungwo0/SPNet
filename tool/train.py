@@ -20,7 +20,7 @@ import apex
 from tensorboardX import SummaryWriter
 
 import sys
-sys.path.append('/root/SPNet/SPNet6/SPNet')
+sys.path.append('/root/SPNet/SPNet7/SPNet')
 from util import dataset, transform, config
 from util.util import AverageMeter, poly_learning_rate, intersectionAndUnionGPU
 from util.loss import OhemCrossEntropyLoss
@@ -60,7 +60,7 @@ def main_process():
     return not args.multiprocessing_distributed or (args.multiprocessing_distributed and args.rank % args.ngpus_per_node == 0)
 
 def main():
-    wandb.init(entity='jungwoo',project='acdc2022',name='SPNet-cityscapes')
+    wandb.init(entity='jungwoo',project='ACDC2022',name='SPNet-cityscapes')
     args = get_parser()
     wandb.config.update(args)
     #check(args)
