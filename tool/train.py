@@ -5,6 +5,7 @@ import cv2
 import numpy as np
 import logging
 import argparse
+import wandb
 
 import torch
 import torch.backends.cudnn as cudnn
@@ -57,7 +58,9 @@ def main_process():
     return not args.multiprocessing_distributed or (args.multiprocessing_distributed and args.rank % args.ngpus_per_node == 0)
 
 def main():
+    wandb.init(entity="jungwoo",project="acdc2022",name="SPNet-cityscapes")
     args = get_parser()
+    wandb.config.update(args)
     #check(args)
     os.environ["CUDA_VISIBLE_DEVICES"] = ','.join(str(x) for x in args.train_gpu)
     if args.manual_seed is not None:
@@ -106,6 +109,7 @@ def main_worker(gpu, ngpus_per_node, argss):
     if args.arch == 'spnet':
         from models.spnet import SPNet
         model = SPNet(nclass=args.classes, backbone=args.backbone, pretrained=args.weight, criterion=criterion, norm_layer=BatchNorm, spm_on=args.spm_on)
+        wandb.watch(model)
         print(model)
         modules_ori = [model.pretrained]
         modules_new = [model.head, model.auxlayer]
