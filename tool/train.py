@@ -19,9 +19,11 @@ import torch.distributed as dist
 import apex
 from tensorboardX import SummaryWriter
 
-from SPNet.util import dataset, transform, config
-from SPNet.util.util import AverageMeter, poly_learning_rate, intersectionAndUnionGPU
-from SPNet.util.loss import OhemCrossEntropyLoss
+import sys
+sys.path.append('/root/SPNet/SPNet6/SPNet')
+from util import dataset, transform, config
+from util.util import AverageMeter, poly_learning_rate, intersectionAndUnionGPU
+from util.loss import OhemCrossEntropyLoss
 
 cv2.ocl.setUseOpenCL(False)
 cv2.setNumThreads(0)
