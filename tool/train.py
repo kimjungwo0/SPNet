@@ -58,7 +58,7 @@ def main_process():
     return not args.multiprocessing_distributed or (args.multiprocessing_distributed and args.rank % args.ngpus_per_node == 0)
 
 def main():
-    wandb.init(entity="jungwoo",project="acdc2022",name="SPNet-cityscapes")
+    wandb.init(entity='jungwoo',project='acdc2022',name='SPNet-cityscapes')
     args = get_parser()
     wandb.config.update(args)
     #check(args)
