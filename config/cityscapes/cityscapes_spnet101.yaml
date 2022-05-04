@@ -34,8 +34,8 @@ TRAIN:
   print_freq: 20
   save_freq: 1
   save_path: /root/SPNet/SPNet8/SPNet/model
-  weight: ./pretrained/resnet101-2a57e44d.pth # path to initial weight (default: none)
-  resume:  # path to latest checkpoint (default: none)
+  weight:
+  resume:
   evaluate: True  # evaluate on validation set, extra gpu memory needed and small batch_size_val is recommend
 Distributed:
   dist_url: tcp://127.0.0.1:6789
