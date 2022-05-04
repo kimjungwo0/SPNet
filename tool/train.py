@@ -19,7 +19,8 @@ import torch.distributed as dist
 import apex
 from tensorboardX import SummaryWriter
 
-
+import sys
+sys.path.append('/root/SPNet/SPNet8/SPNet')
 from util import dataset, transform, config
 from util.util import AverageMeter, poly_learning_rate, intersectionAndUnionGPU
 from util.loss import OhemCrossEntropyLoss
