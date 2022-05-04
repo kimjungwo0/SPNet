@@ -33,7 +33,7 @@ TRAIN:
   manual_seed:
   print_freq: 20
   save_freq: 1
-  save_path: /root/SPNet/SPNet7/SPNet/model
+  save_path: /root/SPNet/SPNet8/SPNet/model
   weight: ./pretrained/resnet101-2a57e44d.pth # path to initial weight (default: none)
   resume:  # path to latest checkpoint (default: none)
   evaluate: True  # evaluate on validation set, extra gpu memory needed and small batch_size_val is recommend
@@ -59,7 +59,7 @@ TEST:
   index_start: 0  # evaluation start index in list
   index_step: 0  # evaluation step index in list, 0 means to end
   test_gpu: [0]
-  model_path: /root/SPNet/SPNet7/SPNet/model/train_epoch_80.pth  # evaluation model path
-  save_folder: /root/SPNet/SPNet7/SPNet/result  # results save folder
-  colors_path: /root/SPNet/SPNet7/SPNet/dataset/cityscapes/cityscapes_colors.txt  # path of dataset colors
-  names_path: /root/SPNet/SPNet7/SPNet/dataset/cityscapes/cityscapes_names.txt  # path of dataset category names
+  model_path: /root/SPNet/SPNet8/SPNet/model/train_epoch_80.pth  # evaluation model path
+  save_folder: /root/SPNet/SPNet8/SPNet/result  # results save folder
+  colors_path: /root/SPNet/SPNet8/SPNet/dataset/cityscapes/cityscapes_colors.txt  # path of dataset colors
+  names_path: /root/SPNet/SPNet8/SPNet/dataset/cityscapes/cityscapes_names.txt  # path of dataset category names
